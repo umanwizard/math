@@ -20,6 +20,13 @@ The result follows by taking square roots.
 	From the proof of Theorem 1-1(3), it is clear that equality holds if and only if $\sum_{i=1}^n x^i y^i = |x|\dot|y|$. By Theorem 1-1(2), this is true if and only if $x$ and $y$ are linearly dependent and $\sum_{i=1}^n x^i y^i$ is nonnegative, which happens if $x=\lambda y$ with $\lambda \geq 0$. Geometrically: if $x$ and $y$ point in the same direction.
 \item By the problem above, $|x-y|=|x+(-y)|=\leq |x| + |-y| = |x| + |y|$, with equality holding when $x=-\lambda y$ with $\lambda \geq 0$.
 \item
+\begin{align*}
+||x|-|y||^2 &= |x|^2-2|x||y|+|y|^2\\
+	&\leq |x|^2 - 2\langle x,y\rangle + |y|^2 &\text{by Theorem 1-1(2)}\\
+	&= \langle x,x\rangle - 2\langle x,y\rangle + \langle y,y\rangle\\
+	&= \langle x-y,x-y\rangle\\
+	&= |x-y|^2.
+\end{align*}
 \item $|z-x| = |(z-y) + (y - x)| \leq |z-y|+|y-x|$, by Theorem 1-1(3). Geometrically, this means that a straight line between two points is no longer than any other piecewise linear path between them.
 \item
 \item

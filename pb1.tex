@@ -1,0 +1,73 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{fullpage}
+\title{Calculus on Manifolds Chapter 1 Problems}
+\author{Brennan Vincent}
+\begin{document}
+\maketitle
+\begin{enumerate}[label=\textbf{1-\arabic*.}]
+\item By basic algebra,
+\begin{align*}
+	\left(\sum_{i=1}^n|x_i|\right)^2 &= \sum_{i=1}^n\sum_{j=1}^n|x_i||x_j|\\
+		&= \left(\sum_{i=1}^n x_i^2\right) + 2\sum_{i=1}^{n-1}\sum_{j=i+1}^n |x_i||x_j|\\
+		&\geq \sum_{i=1}^n x_i^2\\
+		&= |x|^2.
+\end{align*}
+The result follows by taking square roots.
+\item
+	From the proof of Theorem 1-1(3), it is clear that equality holds if and only if $\sum_{i=1}^n x^i y^i = |x|\dot|y|$. By Theorem 1-1(2), this is true if and only if $x$ and $y$ are linearly dependent and $\sum_{i=1}^n x^i y^i$ is nonnegative, which happens if $x=\lambda y$ with $\lambda \geq 0$. Geometrically: if $x$ and $y$ point in the same direction.
+\item By the problem above, $|x-y|=|x+(-y)|=\leq |x| + |-y| = |x| + |y|$, with equality holding when $x=-\lambda y$ with $\lambda \geq 0$.
+\item
+\item $|z-x| = |(z-y) + (y - x)| \leq |z-y|+|y-x|$, by Theorem 1-1(3). Geometrically, this means that a straight line between two points is no longer than any other piecewise linear path between them.
+\item
+\item
+\begin{enumerate}
+\item Assume $T$ is norm preserving. Then
+\begin{align*}
+\langle Tx,Ty\rangle &= \frac{|Tx+Ty|^2-|Tx-Ty|^2}{4}\\
+	&= \frac{|T(x+y)|^2-|T(x-y)|^2}{4}\\
+	&= \frac{|x+y|^2 - |x-y|^2}{4}\\
+	&= \langle x, y \rangle,
+\end{align*}
+so $T$ is inner product preserving. Conversely, if $T$ is inner product preserving,
+\begin{align*}
+|Tx| &= \sqrt{\langle Tx,Tx\rangle}\\
+	&= \sqrt{\langle x,x\rangle}\\
+	&= |x|.
+\end{align*}
+\item Assume $T$ is norm preserving. If $Tx = Ty$, then $T(x-y) = 0$, so $|x-y|=|T(x-y)|=0$. Thus $x=y$ by Theorem 1-1(1), and so $T$ is injective.
+
+If $u\in T(\mathbb R^n)$, then $u = Tx$ for some $x$. Then $|T^{-1}u| = |T^{-1}(Tx)| = |x| = |Tx| = |u|$, since $T$ is norm-preserving. Thus $T^{-1}$ is norm-preserving.
+\end{enumerate}
+\item
+\begin{enumerate}
+\item Assume that $T$ is norm-preserving. Then $T$ is injective by 1-7(b). Also, $\angle(Tx,Ty) = \arccos\frac{\langle Tx,Ty\rangle}{|Tx||Ty|} = \arccos\frac{\langle x,y\rangle}{|x||y|} = \angle(x,y)$, where we use 1-7(a) to justify the equality $\langle Tx,Ty\rangle = \langle x,y\rangle$.
+\item The statement is false. For example, take $x_1 = (1,0)$, $x_2 = (1,1)$, $\lambda_1 = 1$, and $\lambda_2 = -1$. The linear transformation so determined does not preserve angles. (Does the author intend the word \textit{basis} to imply some additional conditions?)
+\end{enumerate}
+\item We show that $T$ is norm-preserving. Write $u=(x, y)$. Then $|Tu| = \sqrt{(x\cos\theta+y\sin\theta)^2+(-x\sin\theta + y\cos\theta)^2} = \sqrt{x^2+y^2} = |u|$, where we have used the fact that $\cos^2\theta + \sin^2\theta = 1$. Since $T$ is norm preserving, it is angle preserving by 1-8(a).
+
+The second part is a simple computation:
+\begin{align*}
+\angle(u,Tu) &= \arccos\frac{\langle u,Tu\rangle}{|u||Tu|}\\
+	&= \arccos\frac{x^2\cos\theta + xy\sin\theta - xy\sin\theta + y^2\cos\theta}{|u|^2}\\
+	&= \arccos\frac{|u|\cos\theta}{|u|}\\
+	&= \arccos\cos\theta.
+\end{align*}
+Since $0 \leq \theta < 2\pi$, $\arccos\cos\theta = \theta$.
+\item Let $M'$ be such that for all $i,j$, $T_{i,j} \leq M'$. Let $R_i$ denote the $i$th row of $T$. Then
+\begin{align*}
+|Th|&=\left(\sum_{i=1}^n \langle R_i,h\rangle^2\right)^{1/2}\\
+	&\leq \left(\sum_{i=1}^n |R_i|^2|h|^2\right)^{1/2} &\text{by Theorem 1-1(2)}\\
+	&\leq \left(\sum_{i=1}^n mM'^2|h|^2\right)^{1/2}\\
+	&= \sqrt{mn}M'|h|.
+\end{align*}
+The result follows by letting $M=\sqrt{mn}M'$.
+\item Trivial.
+\item For any $x$, $x'$, and $y$ in $\mathbb R^n$, and $a$ in $\mathbb R$, $T(ax+x')(y) = \langle ax+x',y\rangle = a\langle x,y\rangle + \langle x',y\rangle = (aTx + Tx')(y)$. Thus $T$ is a linear transformation. If $T(x-x')=0$, then $|x-x'|^2 = \langle x-x',x-x'\rangle = T(x-x')(x-x') = 0$, and so $x=x'$. Thus $T$ is injective.
+
+It is a basic theorem of linear algebra that an injective linear transformation on a finite-dimensional space must be a bijection, which amounts to the conclusion we have been asked to prove.
+\item If $x$ and $y$ are orthogonal, then $|x+y|^2 = \langle x+y,x+y\rangle = \langle x,x\rangle + 2\langle x,y\rangle + \langle y,y\rangle = |x|^2 + 2\langle x,y\rangle + |y|^2 = |x|^2 + |y|^2$.
+\end{enumerate}
+\end{document}

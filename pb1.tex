@@ -89,5 +89,10 @@ The result follows by letting $M=\sqrt{mn}M'$.
 
 It is a basic theorem of linear algebra that an injective linear transformation on a finite-dimensional space must be a bijection, which amounts to the conclusion we have been asked to prove.
 \item If $x$ and $y$ are orthogonal, then $|x+y|^2 = \langle x+y,x+y\rangle = \langle x,x\rangle + 2\langle x,y\rangle + \langle y,y\rangle = |x|^2 + 2\langle x,y\rangle + |y|^2 = |x|^2 + |y|^2$.
+\item Let $\mathcal{O}$ be a family of open sets. If $x\in\bigcup \mathcal O$, then $x\in U$ for some $U\in \mathcal O$. Then there is an open rectangle $A$ with $x\in A\subset U \subset \bigcup\mathcal O$, so $\bigcup\mathcal O$ is open.
+
+If $U_1$ and $U_2$ are open, and $x\in U_1\cap U_2$, then $x\in A_1\cap A_2$, where $A_1$ and $A_2$ are open rectangles contained in $U_1$ and $U_2$, respectively. But the intersection of any two non-disjoint open rectangles is an open rectangle. Thus $U_1\cap U_2$ is open.
+
+Now consider the family $\{n\in\mathbb N: U_n\}$, where $U_n = (-\frac{1}{n},\frac{1}{n})$. Its intersection is $\{0\}$, which is not open.
 \end{enumerate}
 \end{document}

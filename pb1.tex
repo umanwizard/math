@@ -28,7 +28,14 @@ The result follows by taking square roots.
 	&= |x-y|^2.
 \end{align*}
 \item $|z-x| = |(z-y) + (y - x)| \leq |z-y|+|y-x|$, by Theorem 1-1(3). Geometrically, this means that a straight line between two points is no longer than any other piecewise linear path between them.
-\item
+\item If $0=\int_a^b (f-\lambda g)^2$, then $f=\lambda g$ except possibly on a set of measure zero. Then 
+\begin{align*}
+\left|\int_a^b fg\right| &= \left|\lambda\right|\int_a^b g^2\\
+	&= \left|\lambda\right|\left(\int_a^b g^2 \int_a^b g^2\right)^{1/2}\\
+	&= \left|\lambda\right|\left(\frac{\int_a^b f^2}{\lambda^2} \int_a^b g^2\right)^{1/2}\\
+	&= \left(\int_a^b f^2\right)^{1/2}\left(\int_a^b g^2\right)^{1/2}.
+\end{align*}
+On the other hand, if $0 < \int_a^b (f-\lambda g)^2$ for all $\lambda$, then $a\lambda^2 + b\lambda + c > 0$ for all $\lambda$, where $a=\int_a^b g^2$, $b=-2\int_a^b fg$, and $c=\int_a^b f^2$. Since the aforementioned quadratic equation in $\lambda$ is never zero, its determinant $b^2-4ac$ must always be negative. Then $b^2 < 4ac$; that is, $4\left(\int_a^b fg\right)^2 < 4 \left(\int_a^b f^2\right)\left(\int_a^b g^2\right)$, and the result follows by dividing by $4$ and taking square roots.
 \item
 \begin{enumerate}
 \item Assume $T$ is norm preserving. Then

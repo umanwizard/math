@@ -94,5 +94,12 @@ It is a basic theorem of linear algebra that an injective linear transformation 
 If $U_1$ and $U_2$ are open, and $x\in U_1\cap U_2$, then $x\in A_1\cap A_2$, where $A_1$ and $A_2$ are open rectangles contained in $U_1$ and $U_2$, respectively. But the intersection of any two non-disjoint open rectangles is an open rectangle. Thus $U_1\cap U_2$ is open.
 
 Now consider the family $\{n\in\mathbb N: U_n\}$, where $U_n = (-\frac{1}{n},\frac{1}{n})$. Its intersection is $\{0\}$, which is not open.
+\item Let $x$ be such that $|x-a|<r$. Let $B=\frac{r-|x-a|}{\sqrt{n}}$. Then $B$ is positive. Write $x=(x_1, \ldots, x_n)$, and consider the open rectangle $U=((x_1-B,x_1+B)\times\cdots\times (x_n-B,x_n+B)$. If $y\in U$, then each $|y_i - x_i| < B$, so 
+\begin{align*}
+|y-x| &= \sqrt{\sum_{i=1}^n (y_i - x_i) ^2}\\
+	& < \sqrt{\sum_{i=1}^n B^2}\\
+	& \leq r - |x-a|.
+\end{align*}
+Thus $|y-x| + |x-a| < r$ and so $|y-a| < r$, and $U\subset \{x\in\mathbb R^n:|x-a|<r\}$. Thus the latter set is open.
 \end{enumerate}
 \end{document}

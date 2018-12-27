@@ -1,0 +1,20 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{fullpage}
+\title{Calculus on Manifolds Chapter 2 Problems}
+\author{Brennan Vincent}
+\begin{document}
+\maketitle
+\begin{enumerate}[label=\textbf{2-\arabic*.}]
+\item Let $\lambda$ be the derivative of $f$ at $a$. Given $\epsilon > 0$, choose $\delta>0$ such that $|h|<\delta$ implies \[\frac{|f(a+h)-f(a)-\lambda(h)|}{|h|} < \epsilon.\] By 1-10, choose $M$ such that $|\lambda h| \leq M|h|$ for all $h$. Let $\delta' = \min(\frac{\epsilon}{\epsilon+M},\delta)$. Then $|h| < \delta'$ implies
+\begin{align*}
+|f(a+h) - f(a)| &\leq |f(a+h) - f(a) - \lambda h| + |\lambda h|\\
+	&= |h|\frac{|f(a+h)-f(a)-\lambda h|}{|h|} + |\lambda h|\\
+	&< |h|\epsilon + M|h|\\
+	&= |h|(\epsilon + M)\\
+	&< \epsilon.
+\end{align*}
+\end{enumerate}
+\end{document}

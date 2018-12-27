@@ -134,5 +134,6 @@ Conversely, assume $\lim_{x\to a}f_i(x)= b_i$ for each $i$. Given $\epsilon > 0$
 \item Each $g_h$ is continous at $0$ by the above subproblem. On the other hand, given any $\delta > 0$, there are points $x\in A$ with $|x|<\delta$. For these points, $f(x) = 1$. But $f(0) = 0$, so the oscillation of $f$ at $0$ is $1$, and $f$ is not continuous at $0$.
 \end{enumerate}
 \item $f^{-1}((-1,r))$ is the ball in question. It is open because $f$ is continuous and the open interval $(-1,r)$ is open.
+\item Let $f$ be as in the hint. If $y\in A$ and $y\neq x$, then given any $\epsilon > 0$, choose $\delta$ be such that $0 < \delta < \frac{\epsilon(x-y)^2}{2}$ and also such that $|z-y|<\delta$ implies $|x-z| > \frac{|x-y|}{2}$. Then whenever $|z-y|<\delta$, \[|f(z)-f(y)| = \left|\frac{1}{|z-x|}-\frac{1}{|y-x|}\right| \leq \frac{|z-y|}{|z-x||y-x|} < \frac{\delta}{(x-y)^2/2} < \epsilon.\] Thus $f$ is continuous when $x \neq y$, completing the proof.
 \end{enumerate}
 \end{document}

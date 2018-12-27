@@ -16,5 +16,8 @@
 	&= |h|(\epsilon + M)\\
 	&< \epsilon.
 \end{align*}
+\item If $f$ is independent of the second variable, define $g:\mathbb R\to\mathbb R$ by $g(x) = f(x,0)$. Then $f(x,y) = g(x)$ for any $x,y\in\mathbb R$. Conversely, if there is some such $g$, then for any $x, y_1, y_2\in \mathbb R$, $f(x,y_1) = g(x) = f(x, y_2)$.
+
+Given $a,b\in\mathbb R$, let $\lambda:\mathbb R^2\to\mathbb R$ be the linear transformation whose matrix is $(g'(a), 0)$. Given $\epsilon >0$, let $\delta > 0$ be such that $h\in\mathbb R$, $|h|<\delta$ implies \[\frac{|g(a+h)-g(a)-hg'(a)|}{|h|}<\epsilon.\] Then $|(h,k)| < \delta$ implies \[\frac{|f(a+h,b+k)-f(a,b) - \lambda(h,k)|}{|(h,k)|} = \frac{|g(a+h) - g(a) - hg'(a)|}{|(h,k)|} \leq \frac{|g(a+h) - g(a) - hg'(a)|}{|h|} < \epsilon,\] and so $\lambda$ is the derivative of $f$.
 \end{enumerate}
 \end{document}

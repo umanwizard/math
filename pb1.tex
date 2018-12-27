@@ -118,5 +118,13 @@ Thus $|y-x| + |x-a| < r$ and so $|y-a| < r$, and $U\subset \{x\in\mathbb R^n:|x-
 \item Let $A=\{x\in \mathbb R:(x,0)\}$, $B=\{x>0:(x,1/x)\}$.
 \end{enumerate}
 \item For each point $c\in C$, we may choose a closed rectangle $C_c$ that is contained in $U$ and whose interior contains $c$. Let $U_c$ be its interior. The sets $U_c$ cover $C$, and so a finite subcollection do, say $\{U_{c_1},\ldots,U_{c_k}\}$. Then $\bigcup_{1\leq i \leq k} C_{c_i}$ is closed, since it is a finite union of closed sets. It is also bounded, since it is a finite union of bounded sets. Thus it is compact. Its interior obviously contains $C$.
+\item Assume that $\lim_{x\to a} f(x) = b$. For any $\epsilon > 0$, let $\delta$ be such that $x\in A$, $|x-a|<\delta$ imply $|f(x) - b| < \epsilon$. Then if $|x - a| < \delta$, $|f_i(x) - b_i| \leq |f(x)-b| < \epsilon$. Since $\epsilon$ was chosen arbitrarily, this implies $\lim_{x\to a} f_i(x) = b_i$.
+
+Conversely, assume $\lim_{x\to a}f_i(x)= b_i$ for each $i$. Given $\epsilon > 0$, for each $i$, let $\delta_i > 0$ be such that $|x - a| < \delta_i$ implies $|f_i(x) - b_i| < \epsilon / \sqrt{m}$. Let $\delta$ be the minimum of the values $\delta_i$. Then $|x - a| < \delta$ implies 
+\begin{align*}
+|f(x) - b| &= \sqrt{\sum_{i=1}^m (f_i(x) - b_i)^2}\\
+	&\leq \sqrt{\sum_{i=1}^m (\epsilon/\sqrt{m})^2}\\
+	&= \epsilon.
+\end{align*}
 \end{enumerate}
 \end{document}

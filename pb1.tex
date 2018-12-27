@@ -126,5 +126,12 @@ Conversely, assume $\lim_{x\to a}f_i(x)= b_i$ for each $i$. Given $\epsilon > 0$
 	&\leq \sqrt{\sum_{i=1}^m (\epsilon/\sqrt{m})^2}\\
 	&= \epsilon.
 \end{align*}
+\item Let $b=f(a)$ in 1-23.
+\item Choose $M$ such that $|Tx|\leq M|x|$ for all $x\in \mathbb R^n$ (by 1-10). Given $\epsilon > 0$, let $\delta = \epsilon/M$. Then if $|y-x| < \delta$, \[|Ty-Tx| = |T(y-x)| \leq M|y-x| < \epsilon.\]
+\item
+\begin{enumerate}
+\item If the line has infinite or nonpositive slope, it does not have any points in the first quadrant. Otherwise, let the line be given by $y=mx$ for some $m>0$. Then when $x \in (-1,m)$, $(x,y)\notin A$. For $x \leq 0$ this is immediate. For $x > 0$, $y = mx > x^2$ because $x<m$.
+\item Each $g_h$ is continous at $0$ by the above subproblem. On the other hand, given any $\delta > 0$, there are points $x\in A$ with $|x|<\delta$. For these points, $f(x) = 1$. But $f(0) = 0$, so the oscillation of $f$ at $0$ is $1$, and $f$ is not continuous at $0$.
+\end{enumerate}
 \end{enumerate}
 \end{document}

@@ -1,0 +1,45 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{fullpage}
+\newcommand{\li}[2][n] {
+  \liminf_{#1\to\infty} #2 
+}
+\newcommand{\ls}[2][n] {
+  \limsup_{#1\to\infty} #2
+}
+
+\title{Principles of Mathematical Analysis Chapter 3 Exercises}
+\author{Brennan Vincent}
+\begin{document}
+\maketitle
+\begin{enumerate}[label=\textbf{\arabic*.}]
+\setcounter{enumi}{1}
+\item $\frac{1}{2}$ (proof omitted, can be found on math.stackexchange).
+\item We prove by induction that every $s_n < 2$. Since any monotonic bounding sequence converges, $(s_n)$ converges.
+
+The statement is clearly true for $n=1$. If it is true for some $n > 1$, then \[s_{n+1}^2 = 2+\sqrt{s_n} < 2 + \sqrt{2} < 4,\] and so $s_{n+1} < 2$ by taking square roots, since each $s_{n+1}$ is positive.
+\item By induction, each $s_{2m} = \frac{1}{2} - \frac{1}{2^m}$, and each $s_{2m+1} = 1 - \frac{1}{2^m}$. Thus $\lim_{m\to\infty} s_{2m} = \frac{1}{2}$, and $\lim_{m\to\infty} s_{2m+1} = 1$. If any other subsequence of $(s_n)$ contains infinitely many elements of each of these subsequences, then it must diverge. Thus any convergent subsequence of $(s_n)$ is equal to one of the subsequences $(s_{2m})$ or $(s_{2m+1})$ except at finitely many points, and therefore converges either to $\frac{1}{2}$ or to $1$. Thus $\li s_n = \frac{1}{2}$ and $\ls s_n = 1$.
+\item
+\item In each of the following, let $A_n$ denote the $n$th partial sum of the series.
+\begin{enumerate}
+\item $\sum a_n$ is a telescoping series. Thus $A_n = \sqrt{n+1} - 1$, which diverges.
+\item Adding and subtracting $\frac{\sqrt{k+1}}{k+1}$ to each term and rearranging,
+\begin{align*}
+A_n &= \left(\sum_{k=1}^n \frac{\sqrt{k+1}}{k} - \frac{\sqrt{k+1}}{k+1}\right) + \left(\sum_{k=1}^n \frac{\sqrt{k+1}}{k+1} - \frac{\sqrt k}{k}\right)\\
+&= \left(\sum_{k=1}^n\frac{\sqrt{k+1}}{k(k+1)}\right) + \frac{\sqrt{n+1}}{n+1} - 1&\text{since the second sum above is telescoping}.
+\end{align*}
+Now $\frac{\sqrt{n+1}}{n+1}$ converges to $0$, and \[\frac{\sqrt{k+1}}{k(k+1)} < \frac{1}{(k+1)^{3/2}},\] thus the series of those terms converges by the comparison test and by Theorem 3.28. Thus $(A_n)$ converges.
+\item $\sqrt[n]{|a_n|} = \sqrt[n]{n} - 1$, which converges to $0$. Thus $(A_n)$ converges, by the root test.
+\item
+If $|z| < 1$, \[|a_n| = \frac{1}{|1+z^n|} \geq \frac{1}{2},\] so $(a_n)$ does not converge, and neither does $(A_n)$.
+
+If $|z| = 1$, the same proof goes through, with the caveat that the series is only defined when $z^n + 1 \neq 0$ for all $n$.
+
+If $|z| > 1$, the series converges. We first show that $\frac{z^n}{1+z^n}$ is bounded. By the triangle inequality, \[|z^n| = |z^n + 1 - 1| \leq |z^n + 1| + 1,\] and so $|z^n + 1| \geq |z^n| - 1$. Thus \[\frac{|z^n|}{|1+z^n|} \leq \frac{|z^n|}{|z^n| - 1} = \frac{1}{1 - \frac{1}{|z^n|}}.\] The latter expression is obviously bounded.
+
+The proof now follows from the fact that \[\frac{1}{1+z^n} = \frac{1}{z^n}\frac{z^n}{1+z^n}\] and from the comparison test.
+\end{enumerate}
+\end{enumerate}
+\end{document}

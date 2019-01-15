@@ -41,5 +41,11 @@ If $|z| > 1$, the series converges. We first show that $\frac{z^n}{1+z^n}$ is bo
 
 Now \[\left|\frac{1}{1+z^n}\right| = \frac{1}{|z|^n}\left|\frac{z^n}{1+z^n}\right| \leq \frac{1}{|z|^n} M,\] for some fixed $M$. The proof then follows from the fact that $|z| > 1$ and from the comparison test.
 \end{enumerate}
+\setcounter{enumi}{10}
+\item \begin{enumerate}
+\item If $a_n\not\to 0$, let $\epsilon > 0$ be such that $a_n > \epsilon$ for infinitely many values of $n$. Then \[\frac{a_n}{1+a_n} = \frac{1}{1/a_n+1} > \frac{1}{\epsilon+1}\] for infinitely many values of $n$. Thus $\frac{a_n}{1+a_n}\not\to 0$, and the series diverges.
+
+On the other hand, assume that $a_n\to 0$. If $\sum\frac{a_n}{1+a_n}$ converges, then so does $\sum\frac{a_n^2}{1+a_n}$, by the comparison test. But then \[\sum a_n = \sum\left(\frac{a_n}{1+a_n} + \frac{a_n^2}{1+a_n}\right) = \sum\frac{a_n}{1+a_n} + \sum\frac{a_n^2}{1+a_n}\] converges, a contradiction.
+\end{enumerate}
 \end{enumerate}
 \end{document}

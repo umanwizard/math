@@ -55,6 +55,16 @@ On the other hand, assume that $a_n\to 0$. If $\sum\frac{a_n}{1+a_n}$ converges,
 where the last step holds because $a_n > 0$ for all $n$, and so the sequence $(s_n)$ of partial sums is increasing.
 
 Holding $N$ fixed and letting $k\to\infty$, $\frac{S_N}{S_{N+k}}\to 0$ since $\sum a_n$ diverges. Thus we may choose $k$ large enough such that $\sum_{j=1}^k \frac{a_{N+j}}{s_{N+j}} > \frac{1}{2}$. Since this holds for \textit{any} $N\in\mathbb N$, the Cauchy condition for the partial sums of $\sum \frac{a_n}{s_n}$ cannot be satisfied, and so the series diverges.
+\item Since each $a_n > 0$, each $\frac{s_n}{s_{n-1}} > 1$. Then
+\begin{align*}
+a_n &< \frac{s_n}{s_{n-1}} a_n\\
+	&= \frac{s_n}{s_{n-1}}(s_n - s_{n-1})\\
+	&= \frac{s_n^2 - s_n s_{n-1}}{s_{n-1}}\\
+	&= \frac{s_n^2}{s_{n-1}} - s_n.
+\end{align*}
+Dividing both sides by $s_n^2$ yields the desired inequality.
+
+Now \[\sum_{n=2}^k \frac{1}{s_{n-1}} - \frac{1}{s_n}\] is the $k$th partial sum of a telescoping series; its value is \[\frac{1}{a_1} - \frac{1}{s_k}.\] Since $s_k\to\infty$, this series converges. Then $\sum\frac{a_n}{s_n^2}$ converges by the comparison test.
 \end{enumerate}
 \end{enumerate}
 \end{document}

@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{fullpage}
+\newcommand{\li}[2][n] {
+  \liminf_{#1\to\infty} #2 
+}
+\newcommand{\ls}[2][n] {
+  \limsup_{#1\to\infty} #2
+}
+
+\title{Principles of Mathematical Analysis Chapter 4 Exercises}
+\author{Brennan Vincent}
+\begin{document}
+\maketitle
+\begin{enumerate}[label=\textbf{\arabic*.}]
+\item No. For example, define $f$ by \[
+f(x) = \begin{cases}
+	1 & \text{if } x = 0,\\
+	0 & \text{otherwise}.
+\end{cases}\]
+\item Given $x\in \overline E$ and $\epsilon >0$, choose $\delta > 0$ such that $d(x,y) < \delta$ implies $d(f(x),f(y)) < \epsilon$. Since $x\in \overline E$, there exists some $y_0\in E$ satisfying $d(x,y_0) < \delta$. Then $f(y_0)\in f(E)$ and $d(f(x),f(y_0))<\epsilon$. Since $\epsilon$ was chosen arbitrarily, $f(x)\in \overline{f(E)}$.
+
+To show that $f(\overline E)$ can be a proper subset of $\overline{f(E)}$, let $f:\mathbb Q\to \mathbb R$ be the identity inclusion, and let $E=\mathbb Q$.
+\item $Z(f) = f^{-1}(\{0\})$, and $\{0\}$ is closed.
+\item By Exercise 2, $f(X) = f(\overline E) \subset \overline {f(E)}$, so $\overline{f(E)} = f(X)$. In other words, $f(E)$ is dense in $f(X)$.
+
+Assume that $g$ and $f$ agree on a dense subset $E$ of $X$, and assume $p\in X$. Given any $\epsilon > 0$, let $\delta > 0$ be such that $d(f(p),f(x)) < \epsilon/2$ and $d(g(p),g(x)) < \epsilon/2$ whenever $d(p,x) < \delta$. Choose some $x_0\in E$ with $d(p,x_0) < \delta$. Then \[d(g(p),f(p)) \leq d(g(p),g(x_0)) + d(g(x_0),f(x_0)) + d(f(x_0),f(p)) < \epsilon,\] since $d(g(x_0),f(x_0))=0$. Since $\epsilon$ was chosen arbitrarily, $d(g(p),f(p)) = 0$, and so $g(p) = f(p)$.
+\end{enumerate}
+\end{document}
